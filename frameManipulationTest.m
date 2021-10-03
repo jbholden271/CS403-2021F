@@ -1,7 +1,7 @@
 frame0 = SE3([0 0 0], eulerToOrientation([0 0 0]));
-frame1 = SE3([0.3 0.2 0.5], eulerToOrientation([0.4 0.8 1.2]));
-frame2 = SE3([0.7 pi pi/2], eulerToOrientation([-0.4 0.5 1]));
-frame3 = SE3([pi/3 0 0], eulerToOrientation([0.5 -0.8 1.2]));
+frame1 = SE3([0.4 0.8 1.2], eulerToOrientation([0.3 0.2 0.5]));
+frame2 = SE3([-0.4 0.5 1], eulerToOrientation([0.7 pi pi/2]));
+frame3 = SE3([0.5 -0.8 1.2], eulerToOrientation([pi/3 0 0]));
 
 disp("Frame Matrices");
 disp(frame0.Matrix);

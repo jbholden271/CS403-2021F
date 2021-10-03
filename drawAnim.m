@@ -1,14 +1,15 @@
 close all;
 clc;
 
+% initialize frames
 frame0 = SE3([0 0 0], eulerToOrientation([0 0 0]));
-frame1 = SE3([0.3 0.2 0.5], eulerToOrientation([0.4 0.8 1.2]));
+frame1 = SE3([0.4 0.8 1.2], eulerToOrientation([0.3 0.2 0.5]));
+frame2 = SE3([-0.4 0.5 1], eulerToOrientation([0.7 pi pi/2]));
+frame3 = SE3([0.5 -0.8 1.2], eulerToOrientation([pi/3 0 0]));
+% calculate positions
 frame1_r = mult(frame0, frame1);
-frame2 = SE3([0.7 pi pi/2], eulerToOrientation([-0.4 0.5 1]));
 frame2_r = mult(frame1_r, frame2);
-frame3 = SE3([pi/3 0 0], eulerToOrientation([0.5 -0.8 1.2]));
 frame3_r = mult(frame2_r, frame3);
-
 t = 0;
 
 figure
@@ -43,7 +44,7 @@ for i=1:50
     ylabel('$y$','interpreter','latex','fontsize',20)
     zlabel('$z$','interpreter','latex','fontsize',20)
     axis equal
-    view(25,30)
+    view(85,10)
     
     pause(0.001);
     hold off
